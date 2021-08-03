@@ -5,20 +5,37 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * A program to be run from server side, that allows a client to connect
+ * via both public and private IPs of the server
+ *
+ */
 public class ServerSocketPreparation {
 	
+	/**
+	 * A stream to receive data from the client
+	 */
 	static DataInputStream in;
 	
+	/**
+	 * A stream to send data to the client
+	 */
 	static DataOutputStream out;
 	
+	/**
+	 * Server's private IP
+	 */
 	private static final String privateIP = "";
 	
+	/**
+	 * IP of the client that will have a tunnel to server's port via server's 
+	 * private IP
+	 */
 	private static String clientIP = "";
 	
-    static DataInputStream privateIn;
-	
-	static DataOutputStream privateOut;
-	
+	/**
+	 * A process to execute a query that creates a tunnel
+	 */
 	static Process p;
 
 	public static void main(String[] args) throws IOException {
